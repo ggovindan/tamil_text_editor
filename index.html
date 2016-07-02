@@ -1,0 +1,1308 @@
+<html>
+<head>
+<title> Unicode Converter </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This code is inspired from http://higopi.com/ucedit/Tamil.html, you can contact the author Gopi at gopi@higopi.com -->
+<script language="JavaScript" >
+<!--
+function cTT(txt)
+{
+a = txt.split("\u001F");
+if (a != null)
+  for(i=0;i<a.length;i+=2)
+        a[i] = startTamilText(a[i]);
+retStr =  a.join("\u001F");
+return retStr;
+}
+
+function startTamilText(t)
+{
+t = t.replace(/f/gi, "qp");
+t = t.replace(/B/g, "b");
+t = t.replace(/C/g, "c");
+t = t.replace(/D/g, "d");
+t = t.replace(/G/g, "g");
+t = t.replace(/J/g, "j");
+t = t.replace(/K/g, "k");
+t = t.replace(/M/g, "m");
+t = t.replace(/P/g, "p");
+t = t.replace(/Q/g, "q");
+t = t.replace(/T/g, "t");
+t = t.replace(/V/g, "v");
+t = t.replace(/W/g, "w");
+t = t.replace(/X/g, "x");
+t = t.replace(/Y/g, "y");
+t = t.replace(/Z/g, "z");
+
+t = t.replace(/njau/g, "\u0B9E\u0BCC");
+t = t.replace(/njai/g, "\u0B9E\u0BC8");
+t = t.replace(/njee/g, "\u0B9E\u0BC7");
+t = t.replace(/njoo/g, "\u0B9E\u0BCB");
+t = t.replace(/njaa/g, "\u0B9E\u0BBE");
+t = t.replace(/njuu/g, "\u0B9E\u0BC2");
+t = t.replace(/njii/g, "\u0B9E\u0BC0");
+t = t.replace(/nja/g, "\u0B9E");
+t = t.replace(/nji/g, "\u0B9E\u0BBF");
+t = t.replace(/njI/g, "\u0B9E\u0BC0");
+t = t.replace(/njA/g, "\u0B9E\u0BBE");
+t = t.replace(/nje/g, "\u0B9E\u0BC6");
+t = t.replace(/njE/g, "\u0B9E\u0BC7");
+t = t.replace(/njo/g, "\u0B9E\u0BCA");
+t = t.replace(/njO/g, "\u0B9E\u0BCB");
+t = t.replace(/nju/g, "\u0B9E\u0BC1");
+t = t.replace(/njU/g, "\u0B9E\u0BC2");
+t = t.replace(/nj/g, "\u0B9E\u0BCD");
+
+t = t.replace(/ngau/g, "\u0B99\u0BCC");
+t = t.replace(/ngai/g, "\u0B99\u0BC8");
+t = t.replace(/ngee/g, "\u0B99\u0BC7");
+t = t.replace(/ngoo/g, "\u0B99\u0BCB");
+t = t.replace(/ngaa/g, "\u0B99\u0BBE");
+t = t.replace(/nguu/g, "\u0B99\u0BC2");
+t = t.replace(/ngii/g, "\u0B99\u0BC0");
+t = t.replace(/nga/g, "\u0B99");
+t = t.replace(/ngi/g, "\u0B99\u0BBF");
+t = t.replace(/ngI/g, "\u0B99\u0BC0");
+t = t.replace(/ngA/g, "\u0B99\u0BBE");
+t = t.replace(/nge/g, "\u0B99\u0BC6");
+t = t.replace(/ngE/g, "\u0B99\u0BC7");
+t = t.replace(/ngo/g, "\u0B99\u0BCA");
+t = t.replace(/ngO/g, "\u0B99\u0BCB");
+t = t.replace(/ngu/g, "\u0B99\u0BC1");
+t = t.replace(/ngU/g, "\u0B99\u0BC2");
+t = t.replace(/ng/g, "\u0B99\u0BCD");
+
+t = t.replace(/shau/g, "\u0BB7\u0BCC");
+t = t.replace(/shai/g, "\u0BB7\u0BC8");
+t = t.replace(/shee/g, "\u0BB7\u0BC7");
+t = t.replace(/shoo/g, "\u0BB7\u0BCB");
+t = t.replace(/shaa/g, "\u0BB7\u0BBE");
+t = t.replace(/shuu/g, "\u0BB7\u0BC2");
+t = t.replace(/shii/g, "\u0BB7\u0BC0");
+t = t.replace(/sha/g, "\u0BB7");
+t = t.replace(/shi/g, "\u0BB7\u0BBF");
+t = t.replace(/shI/g, "\u0BB7\u0BC0");
+t = t.replace(/shA/g, "\u0BB7\u0BBE");
+t = t.replace(/she/g, "\u0BB7\u0BC6");
+t = t.replace(/shE/g, "\u0BB7\u0BC7");
+t = t.replace(/sho/g, "\u0BB7\u0BCA");
+t = t.replace(/shO/g, "\u0BB7\u0BCB");
+t = t.replace(/shu/g, "\u0BB7\u0BC1");
+t = t.replace(/shU/g, "\u0BB7\u0BC2");
+t = t.replace(/sh/g, "\u0BB7\u0BCD");
+
+
+t = t.replace(/ nau/g, " \u0BA8\u0BCC");
+t = t.replace(/ nai/g, " \u0BA8\u0BC8");
+t = t.replace(/ nee/g, " \u0BA8\u0BC7");
+t = t.replace(/ noo/g, " \u0BA8\u0BCB");
+t = t.replace(/ naa/g, " \u0BA8\u0BBE");
+t = t.replace(/ nuu/g, " \u0BA8\u0BC2");
+t = t.replace(/ nii/g, " \u0BA8\u0BC0");
+t = t.replace(/ na/g, " \u0BA8");
+t = t.replace(/ ni/g, " \u0BA8\u0BBF");
+t = t.replace(/ nI/g, " \u0BA8\u0BC0");
+t = t.replace(/ nA/g, " \u0BA8\u0BBE");
+t = t.replace(/ ne/g, " \u0BA8\u0BC6");
+t = t.replace(/ nE/g, " \u0BA8\u0BC7");
+t = t.replace(/ no/g, " \u0BA8\u0BCA");
+t = t.replace(/ nO/g, " \u0BA8\u0BCB");
+t = t.replace(/ nu/g, " \u0BA8\u0BC1");
+t = t.replace(/ nU/g, " \u0BA8\u0BC2");
+
+t = t.replace(/-nau/g, "\u0BA8\u0BCC");
+t = t.replace(/-nai/g, "\u0BA8\u0BC8");
+t = t.replace(/-nee/g, "\u0BA8\u0BC7");
+t = t.replace(/-noo/g, "\u0BA8\u0BCB");
+t = t.replace(/-naa/g, "\u0BA8\u0BBE");
+t = t.replace(/-nuu/g, "\u0BA8\u0BC2");
+t = t.replace(/-nii/g, "\u0BA8\u0BC0");
+t = t.replace(/-na/g, "\u0BA8");
+t = t.replace(/-ni/g, "\u0BA8\u0BBF");
+t = t.replace(/-nI/g, "\u0BA8\u0BC0");
+t = t.replace(/-nA/g, "\u0BA8\u0BBE");
+t = t.replace(/-ne/g, "\u0BA8\u0BC6");
+t = t.replace(/-nE/g, "\u0BA8\u0BC7");
+t = t.replace(/-no/g, "\u0BA8\u0BCA");
+t = t.replace(/-nO/g, "\u0BA8\u0BCB");
+t = t.replace(/-nu/g, "\u0BA8\u0BC1");
+t = t.replace(/-nU/g, "\u0BA8\u0BC2");
+
+t = t.replace(/n-au/g, "\u0BA8\u0BCC");
+t = t.replace(/n-ai/g, "\u0BA8\u0BC8");
+t = t.replace(/n-ee/g, "\u0BA8\u0BC7");
+t = t.replace(/n-oo/g, "\u0BA8\u0BCB");
+t = t.replace(/n-aa/g, "\u0BA8\u0BBE");
+t = t.replace(/n-uu/g, "\u0BA8\u0BC2");
+t = t.replace(/n-ii/g, "\u0BA8\u0BC0");
+t = t.replace(/n-a/g, "\u0BA8");
+t = t.replace(/n-i/g, "\u0BA8\u0BBF");
+t = t.replace(/n-I/g, "\u0BA8\u0BC0");
+t = t.replace(/n-A/g, "\u0BA8\u0BBE");
+t = t.replace(/n-e/g, "\u0BA8\u0BC6");
+t = t.replace(/n-E/g, "\u0BA8\u0BC7");
+t = t.replace(/n-o/g, "\u0BA8\u0BCA");
+t = t.replace(/n-O/g, "\u0BA8\u0BCB");
+t = t.replace(/n-u/g, "\u0BA8\u0BC1");
+t = t.replace(/n-U/g, "\u0BA8\u0BC2");
+
+t = t.replace(/wau/g, "\u0BA8\u0BCC");
+t = t.replace(/wai/g, "\u0BA8\u0BC8");
+t = t.replace(/wee/g, "\u0BA8\u0BC7");
+t = t.replace(/woo/g, "\u0BA8\u0BCB");
+t = t.replace(/waa/g, "\u0BA8\u0BBE");
+t = t.replace(/wuu/g, "\u0BA8\u0BC2");
+t = t.replace(/wii/g, "\u0BA8\u0BC0");
+t = t.replace(/wa/g, "\u0BA8");
+t = t.replace(/wi/g, "\u0BA8\u0BBF");
+t = t.replace(/wI/g, "\u0BA8\u0BC0");
+t = t.replace(/wA/g, "\u0BA8\u0BBE");
+t = t.replace(/we/g, "\u0BA8\u0BC6");
+t = t.replace(/wE/g, "\u0BA8\u0BC7");
+t = t.replace(/wo/g, "\u0BA8\u0BCA");
+t = t.replace(/wO/g, "\u0BA8\u0BCB");
+t = t.replace(/wu/g, "\u0BA8\u0BC1");
+t = t.replace(/wU/g, "\u0BA8\u0BC2");
+t = t.replace(/ n/g, " \u0BA8\u0BCD");
+t = t.replace(/n-/g, "\u0BA8\u0BCD");
+t = t.replace(/-n/g, "\u0BA8\u0BCD");
+t = t.replace(/w/g, "\u0BA8\u0BCD");
+t = t.replace(/^n/g, "\u0BA8\u0BCD");
+t = t.replace(/\nn/g, "\u0BA8\u0BCD");
+
+
+t = t.replace(/ nth/g, " \u0BA8\u0BCD\u0BA4\u0BCD");
+t = t.replace(/nthau/g, "\u0BA8\u0BCD\u0BA4\u0BCC");
+t = t.replace(/nthai/g, "\u0BA8\u0BCD\u0BA4\u0BC8");
+t = t.replace(/nthee/g, "\u0BA8\u0BCD\u0BA4\u0BC7");
+t = t.replace(/nthoo/g, "\u0BA8\u0BCD\u0BA4\u0BCB");
+t = t.replace(/nthaa/g, "\u0BA8\u0BCD\u0BA4\u0BBE");
+t = t.replace(/nthuu/g, "\u0BA8\u0BCD\u0BA4\u0BC2");
+t = t.replace(/nthii/g, "\u0BA8\u0BCD\u0BA4\u0BC0");
+t = t.replace(/ntha/g, "\u0BA8\u0BCD\u0BA4");
+t = t.replace(/nthi/g, "\u0BA8\u0BCD\u0BA4\u0BBF");
+t = t.replace(/nthI/g, "\u0BA8\u0BCD\u0BA4\u0BC0");
+t = t.replace(/nthA/g, "\u0BA8\u0BCD\u0BA4\u0BBE");
+t = t.replace(/nthe/g, "\u0BA8\u0BCD\u0BA4\u0BC6");
+t = t.replace(/nthE/g, "\u0BA8\u0BCD\u0BA4\u0BC7");
+t = t.replace(/ntho/g, "\u0BA8\u0BCD\u0BA4\u0BCA");
+t = t.replace(/nthO/g, "\u0BA8\u0BCD\u0BA4\u0BCB");
+t = t.replace(/nthu/g, "\u0BA8\u0BCD\u0BA4\u0BC1");
+t = t.replace(/nthU/g, "\u0BA8\u0BCD\u0BA4\u0BC2");
+t = t.replace(/nth/g, "\u0BA8\u0BCD\u0BA4\u0BCD");
+
+t = t.replace(/dhau/g, "\u0BA4\u0BCC");
+t = t.replace(/dhai/g, "\u0BA4\u0BC8");
+t = t.replace(/dhee/g, "\u0BA4\u0BC7");
+t = t.replace(/dhoo/g, "\u0BA4\u0BCB");
+t = t.replace(/dhaa/g, "\u0BA4\u0BBE");
+t = t.replace(/dhuu/g, "\u0BA4\u0BC2");
+t = t.replace(/dhii/g, "\u0BA4\u0BC0");
+t = t.replace(/dha/g, "\u0BA4");
+t = t.replace(/dhi/g, "\u0BA4\u0BBF");
+t = t.replace(/dhI/g, "\u0BA4\u0BC0");
+t = t.replace(/dhA/g, "\u0BA4\u0BBE");
+t = t.replace(/dhe/g, "\u0BA4\u0BC6");
+t = t.replace(/dhE/g, "\u0BA4\u0BC7");
+t = t.replace(/dho/g, "\u0BA4\u0BCA");
+t = t.replace(/dhO/g, "\u0BA4\u0BCB");
+t = t.replace(/dhu/g, "\u0BA4\u0BC1");
+t = t.replace(/dhU/g, "\u0BA4\u0BC2");
+t = t.replace(/dh/g, "\u0BA4\u0BCD");
+
+t = t.replace(/chau/g, "\u0B9A\u0BCC");
+t = t.replace(/chai/g, "\u0B9A\u0BC8");
+t = t.replace(/chee/g, "\u0B9A\u0BC7");
+t = t.replace(/choo/g, "\u0B9A\u0BCB");
+t = t.replace(/chaa/g, "\u0B9A\u0BBE");
+t = t.replace(/chuu/g, "\u0B9A\u0BC2");
+t = t.replace(/chii/g, "\u0B9A\u0BC0");
+t = t.replace(/cha/g, "\u0B9A");
+t = t.replace(/chi/g, "\u0B9A\u0BBF");
+t = t.replace(/chI/g, "\u0B9A\u0BC0");
+t = t.replace(/chA/g, "\u0B9A\u0BBE");
+t = t.replace(/che/g, "\u0B9A\u0BC6");
+t = t.replace(/chE/g, "\u0B9A\u0BC7");
+t = t.replace(/cho/g, "\u0B9A\u0BCA");
+t = t.replace(/chO/g, "\u0B9A\u0BCB");
+t = t.replace(/chu/g, "\u0B9A\u0BC1");
+t = t.replace(/chU/g, "\u0B9A\u0BC2");
+t = t.replace(/ch/g, "\u0B9A\u0BCD");
+
+t = t.replace(/zhau/g, "\u0BB4\u0BCC");
+t = t.replace(/zhai/g, "\u0BB4\u0BC8");
+t = t.replace(/zhee/g, "\u0BB4\u0BC7");
+t = t.replace(/zhoo/g, "\u0BB4\u0BCB");
+t = t.replace(/zhaa/g, "\u0BB4\u0BBE");
+t = t.replace(/zhuu/g, "\u0BB4\u0BC2");
+t = t.replace(/zhii/g, "\u0BB4\u0BC0");
+t = t.replace(/zha/g, "\u0BB4");
+t = t.replace(/zhi/g, "\u0BB4\u0BBF");
+t = t.replace(/zhI/g, "\u0BB4\u0BC0");
+t = t.replace(/zhA/g, "\u0BB4\u0BBE");
+t = t.replace(/zhe/g, "\u0BB4\u0BC6");
+t = t.replace(/zhE/g, "\u0BB4\u0BC7");
+t = t.replace(/zho/g, "\u0BB4\u0BCA");
+t = t.replace(/zhO/g, "\u0BB4\u0BCB");
+t = t.replace(/zhu/g, "\u0BB4\u0BC1");
+t = t.replace(/zhU/g, "\u0BB4\u0BC2");
+
+t = t.replace(/zh/g, "\u0BB4\u0BCD");
+t = t.replace(/zau/g, "\u0BB4\u0BCC");
+t = t.replace(/zai/g, "\u0BB4\u0BC8");
+t = t.replace(/zee/g, "\u0BB4\u0BC7");
+t = t.replace(/zoo/g, "\u0BB4\u0BCB");
+t = t.replace(/zaa/g, "\u0BB4\u0BBE");
+t = t.replace(/zuu/g, "\u0BB4\u0BC2");
+t = t.replace(/zii/g, "\u0BB4\u0BC0");
+t = t.replace(/za/g, "\u0BB4");
+t = t.replace(/zi/g, "\u0BB4\u0BBF");
+t = t.replace(/zI/g, "\u0BB4\u0BC0");
+t = t.replace(/zA/g, "\u0BB4\u0BBE");
+t = t.replace(/ze/g, "\u0BB4\u0BC6");
+t = t.replace(/zE/g, "\u0BB4\u0BC7");
+t = t.replace(/zo/g, "\u0BB4\u0BCA");
+t = t.replace(/zO/g, "\u0BB4\u0BCB");
+t = t.replace(/zu/g, "\u0BB4\u0BC1");
+t = t.replace(/zU/g, "\u0BB4\u0BC2");
+t = t.replace(/z/g, "\u0BB4\u0BCD");
+
+t = t.replace(/jau/g, "\u0B9C\u0BCC");
+t = t.replace(/jai/g, "\u0B9C\u0BC8");
+t = t.replace(/jee/g, "\u0B9C\u0BC7");
+t = t.replace(/joo/g, "\u0B9C\u0BCB");
+t = t.replace(/jaa/g, "\u0B9C\u0BBE");
+t = t.replace(/juu/g, "\u0B9C\u0BC2");
+t = t.replace(/jii/g, "\u0B9C\u0BC0");
+t = t.replace(/ja/g, "\u0B9C");
+t = t.replace(/ji/g, "\u0B9C\u0BBF");
+t = t.replace(/jI/g, "\u0B9C\u0BC0");
+t = t.replace(/jA/g, "\u0B9C\u0BBE");
+t = t.replace(/je/g, "\u0B9C\u0BC6");
+t = t.replace(/jE/g, "\u0B9C\u0BC7");
+t = t.replace(/jo/g, "\u0B9C\u0BCA");
+t = t.replace(/jO/g, "\u0B9C\u0BCB");
+t = t.replace(/ju/g, "\u0B9C\u0BC1");
+t = t.replace(/jU/g, "\u0B9C\u0BC2");
+t = t.replace(/j/g, "\u0B9C\u0BCD");
+
+t = t.replace(/thau/g, "\u0BA4\u0BCC");
+t = t.replace(/thai/g, "\u0BA4\u0BC8");
+t = t.replace(/thee/g, "\u0BA4\u0BC7");
+t = t.replace(/thoo/g, "\u0BA4\u0BCB");
+t = t.replace(/thaa/g, "\u0BA4\u0BBE");
+t = t.replace(/thuu/g, "\u0BA4\u0BC2");
+t = t.replace(/thii/g, "\u0BA4\u0BC0");
+t = t.replace(/tha/g, "\u0BA4");
+t = t.replace(/thi/g, "\u0BA4\u0BBF");
+t = t.replace(/thI/g, "\u0BA4\u0BC0");
+t = t.replace(/thA/g, "\u0BA4\u0BBE");
+t = t.replace(/the/g, "\u0BA4\u0BC6");
+t = t.replace(/thE/g, "\u0BA4\u0BC7");
+t = t.replace(/tho/g, "\u0BA4\u0BCA");
+t = t.replace(/thO/g, "\u0BA4\u0BCB");
+t = t.replace(/thu/g, "\u0BA4\u0BC1");
+t = t.replace(/thU/g, "\u0BA4\u0BC2");
+t = t.replace(/th/g, "\u0BA4\u0BCD");
+
+t = t.replace(/-hau/g, "\u0BB9\u0BCC");
+t = t.replace(/-hai/g, "\u0BB9\u0BC8");
+t = t.replace(/-hee/g, "\u0BB9\u0BC7");
+t = t.replace(/-hoo/g, "\u0BB9\u0BCB");
+t = t.replace(/-haa/g, "\u0BB9\u0BBE");
+t = t.replace(/-huu/g, "\u0BB9\u0BC2");
+t = t.replace(/-hii/g, "\u0BB9\u0BC0");
+t = t.replace(/-ha/g, "\u0BB9");
+t = t.replace(/-hi/g, "\u0BB9\u0BBF");
+t = t.replace(/-hI/g, "\u0BB9\u0BC0");
+t = t.replace(/-hA/g, "\u0BB9\u0BBE");
+t = t.replace(/-he/g, "\u0BB9\u0BC6");
+t = t.replace(/-hE/g, "\u0BB9\u0BC7");
+t = t.replace(/-ho/g, "\u0BB9\u0BCA");
+t = t.replace(/-hO/g, "\u0BB9\u0BCB");
+t = t.replace(/-hu/g, "\u0BB9\u0BC1");
+t = t.replace(/-hU/g, "\u0BB9\u0BC2");
+t = t.replace(/-h/g, "\u0BB9\u0BCD");
+
+t = t.replace(/hau/g, "\u0BB9\u0BCC");
+t = t.replace(/hai/g, "\u0BB9\u0BC8");
+t = t.replace(/hee/g, "\u0BB9\u0BC7");
+t = t.replace(/hoo/g, "\u0BB9\u0BCB");
+t = t.replace(/haa/g, "\u0BB9\u0BBE");
+t = t.replace(/huu/g, "\u0BB9\u0BC2");
+t = t.replace(/hii/g, "\u0BB9\u0BC0");
+t = t.replace(/ha/g, "\u0BB9");
+t = t.replace(/hi/g, "\u0BB9\u0BBF");
+t = t.replace(/hI/g, "\u0BB9\u0BC0");
+t = t.replace(/hA/g, "\u0BB9\u0BBE");
+t = t.replace(/he/g, "\u0BB9\u0BC6");
+t = t.replace(/hE/g, "\u0BB9\u0BC7");
+t = t.replace(/ho/g, "\u0BB9\u0BCA");
+t = t.replace(/hO/g, "\u0BB9\u0BCB");
+t = t.replace(/hu/g, "\u0BB9\u0BC1");
+t = t.replace(/hU/g, "\u0BB9\u0BC2");
+t = t.replace(/h/g, "\u0BB9\u0BCD");
+
+t = t.replace(/Hau/g, "\u0BB9\u0BCC");
+t = t.replace(/Hai/g, "\u0BB9\u0BC8");
+t = t.replace(/Hee/g, "\u0BB9\u0BC7");
+t = t.replace(/Hoo/g, "\u0BB9\u0BCB");
+t = t.replace(/Haa/g, "\u0BB9\u0BBE");
+t = t.replace(/Huu/g, "\u0BB9\u0BC2");
+t = t.replace(/Hii/g, "\u0BB9\u0BC0");
+t = t.replace(/Ha/g, "\u0BB9");
+t = t.replace(/Hi/g, "\u0BB9\u0BBF");
+t = t.replace(/HI/g, "\u0BB9\u0BC0");
+t = t.replace(/HA/g, "\u0BB9\u0BBE");
+t = t.replace(/He/g, "\u0BB9\u0BC6");
+t = t.replace(/HE/g, "\u0BB9\u0BC7");
+t = t.replace(/Ho/g, "\u0BB9\u0BCA");
+t = t.replace(/HO/g, "\u0BB9\u0BCB");
+t = t.replace(/Hu/g, "\u0BB9\u0BC1");
+t = t.replace(/HU/g, "\u0BB9\u0BC2");
+t = t.replace(/H/g, "\u0BB9\u0BCD");
+
+t = t.replace(/cau/g, "\u0B9A\u0BCC");
+t = t.replace(/cai/g, "\u0B9A\u0BC8");
+t = t.replace(/cee/g, "\u0B9A\u0BC7");
+t = t.replace(/coo/g, "\u0B9A\u0BCB");
+t = t.replace(/caa/g, "\u0B9A\u0BBE");
+t = t.replace(/cuu/g, "\u0B9A\u0BC2");
+t = t.replace(/cii/g, "\u0B9A\u0BC0");
+t = t.replace(/ca/g, "\u0B9A");
+t = t.replace(/ci/g, "\u0B9A\u0BBF");
+t = t.replace(/cI/g, "\u0B9A\u0BC0");
+t = t.replace(/cA/g, "\u0B9A\u0BBE");
+t = t.replace(/ce/g, "\u0B9A\u0BC6");
+t = t.replace(/cE/g, "\u0B9A\u0BC7");
+t = t.replace(/co/g, "\u0B9A\u0BCA");
+t = t.replace(/cO/g, "\u0B9A\u0BCB");
+t = t.replace(/cu/g, "\u0B9A\u0BC1");
+t = t.replace(/cU/g, "\u0B9A\u0BC2");
+t = t.replace(/c/g, "\u0B9A\u0BCD");
+
+t = t.replace(/kau/g, "\u0B95\u0BCC");
+t = t.replace(/kai/g, "\u0B95\u0BC8");
+t = t.replace(/kee/g, "\u0B95\u0BC7");
+t = t.replace(/koo/g, "\u0B95\u0BCB");
+t = t.replace(/kaa/g, "\u0B95\u0BBE");
+t = t.replace(/kuu/g, "\u0B95\u0BC2");
+t = t.replace(/kii/g, "\u0B95\u0BC0");
+t = t.replace(/ka/g, "\u0B95");
+t = t.replace(/ki/g, "\u0B95\u0BBF");
+t = t.replace(/kI/g, "\u0B95\u0BC0");
+t = t.replace(/kA/g, "\u0B95\u0BBE");
+t = t.replace(/ke/g, "\u0B95\u0BC6");
+t = t.replace(/kE/g, "\u0B95\u0BC7");
+t = t.replace(/ko/g, "\u0B95\u0BCA");
+t = t.replace(/kO/g, "\u0B95\u0BCB");
+t = t.replace(/ku/g, "\u0B95\u0BC1");
+t = t.replace(/kU/g, "\u0B95\u0BC2");
+t = t.replace(/k/g, "\u0B95\u0BCD");
+
+t = t.replace(/-sau/g, "\u0BB8\u0BCC");
+t = t.replace(/-sai/g, "\u0BB8\u0BC8");
+t = t.replace(/-see/g, "\u0BB8\u0BC7");
+t = t.replace(/-soo/g, "\u0BB8\u0BCB");
+t = t.replace(/-saa/g, "\u0BB8\u0BBE");
+t = t.replace(/-suu/g, "\u0BB8\u0BC2");
+t = t.replace(/-sii/g, "\u0BB8\u0BC0");
+t = t.replace(/-sa/g, "\u0BB8");
+t = t.replace(/-si/g, "\u0BB8\u0BBF");
+t = t.replace(/-sI/g, "\u0BB8\u0BC0");
+t = t.replace(/-sA/g, "\u0BB8\u0BBE");
+t = t.replace(/-se/g, "\u0BB8\u0BC6");
+t = t.replace(/-sE/g, "\u0BB8\u0BC7");
+t = t.replace(/-so/g, "\u0BB8\u0BCA");
+t = t.replace(/-sO/g, "\u0BB8\u0BCB");
+t = t.replace(/-su/g, "\u0BB8\u0BC1");
+t = t.replace(/-sU/g, "\u0BB8\u0BC2");
+t = t.replace(/-s/g, "\u0BB8\u0BCD");
+
+t = t.replace(/Sau/g, "\u0BB8\u0BCC");
+t = t.replace(/Sai/g, "\u0BB8\u0BC8");
+t = t.replace(/See/g, "\u0BB8\u0BC7");
+t = t.replace(/Soo/g, "\u0BB8\u0BCB");
+t = t.replace(/Saa/g, "\u0BB8\u0BBE");
+t = t.replace(/Suu/g, "\u0BB8\u0BC2");
+t = t.replace(/Sii/g, "\u0BB8\u0BC0");
+t = t.replace(/Sa/g, "\u0BB8");
+t = t.replace(/Si/g, "\u0BB8\u0BBF");
+t = t.replace(/SI/g, "\u0BB8\u0BC0");
+t = t.replace(/SA/g, "\u0BB8\u0BBE");
+t = t.replace(/Se/g, "\u0BB8\u0BC6");
+t = t.replace(/SE/g, "\u0BB8\u0BC7");
+t = t.replace(/So/g, "\u0BB8\u0BCA");
+t = t.replace(/SO/g, "\u0BB8\u0BCB");
+t = t.replace(/Su/g, "\u0BB8\u0BC1");
+t = t.replace(/SU/g, "\u0BB8\u0BC2");
+t = t.replace(/S/g, "\u0BB8\u0BCD");
+
+t = t.replace(/rau/g, "\u0BB0\u0BCC");
+t = t.replace(/rai/g, "\u0BB0\u0BC8");
+t = t.replace(/ree/g, "\u0BB0\u0BC7");
+t = t.replace(/roo/g, "\u0BB0\u0BCB");
+t = t.replace(/raa/g, "\u0BB0\u0BBE");
+t = t.replace(/ruu/g, "\u0BB0\u0BC2");
+t = t.replace(/rii/g, "\u0BB0\u0BC0");
+t = t.replace(/ra/g, "\u0BB0");
+t = t.replace(/ri/g, "\u0BB0\u0BBF");
+t = t.replace(/rI/g, "\u0BB0\u0BC0");
+t = t.replace(/rA/g, "\u0BB0\u0BBE");
+t = t.replace(/re/g, "\u0BB0\u0BC6");
+t = t.replace(/rE/g, "\u0BB0\u0BC7");
+t = t.replace(/ro/g, "\u0BB0\u0BCA");
+t = t.replace(/rO/g, "\u0BB0\u0BCB");
+t = t.replace(/ru/g, "\u0BB0\u0BC1");
+t = t.replace(/rU/g, "\u0BB0\u0BC2");
+t = t.replace(/r/g, "\u0BB0\u0BCD");
+
+t = t.replace(/Rau/g, "\u0BB1\u0BCC");
+t = t.replace(/Rai/g, "\u0BB1\u0BC8");
+t = t.replace(/Ree/g, "\u0BB1\u0BC7");
+t = t.replace(/Roo/g, "\u0BB1\u0BCB");
+t = t.replace(/Raa/g, "\u0BB1\u0BBE");
+t = t.replace(/Ruu/g, "\u0BB1\u0BC2");
+t = t.replace(/Rii/g, "\u0BB1\u0BC0");
+t = t.replace(/Ra/g, "\u0BB1");
+t = t.replace(/Ri/g, "\u0BB1\u0BBF");
+t = t.replace(/RI/g, "\u0BB1\u0BC0");
+t = t.replace(/RA/g, "\u0BB1\u0BBE");
+t = t.replace(/Re/g, "\u0BB1\u0BC6");
+t = t.replace(/RE/g, "\u0BB1\u0BC7");
+t = t.replace(/Ro/g, "\u0BB1\u0BCA");
+t = t.replace(/RO/g, "\u0BB1\u0BCB");
+t = t.replace(/Ru/g, "\u0BB1\u0BC1");
+t = t.replace(/RU/g, "\u0BB1\u0BC2");
+t = t.replace(/R/g, "\u0BB1\u0BCD");
+
+
+t = t.replace(/tau/g, "\u0B9F\u0BCC");
+t = t.replace(/tai/g, "\u0B9F\u0BC8");
+t = t.replace(/tee/g, "\u0B9F\u0BC7");
+t = t.replace(/too/g, "\u0B9F\u0BCB");
+t = t.replace(/taa/g, "\u0B9F\u0BBE");
+t = t.replace(/tuu/g, "\u0B9F\u0BC2");
+t = t.replace(/tii/g, "\u0B9F\u0BC0");
+t = t.replace(/ta/g, "\u0B9F");
+t = t.replace(/ti/g, "\u0B9F\u0BBF");
+t = t.replace(/tI/g, "\u0B9F\u0BC0");
+t = t.replace(/tA/g, "\u0B9F\u0BBE");
+t = t.replace(/te/g, "\u0B9F\u0BC6");
+t = t.replace(/tE/g, "\u0B9F\u0BC7");
+t = t.replace(/to/g, "\u0B9F\u0BCA");
+t = t.replace(/tO/g, "\u0B9F\u0BCB");
+t = t.replace(/tu/g, "\u0B9F\u0BC1");
+t = t.replace(/tU/g, "\u0B9F\u0BC2");
+t = t.replace(/t/g, "\u0B9F\u0BCD");
+
+
+t = t.replace(/sau/g, "\u0B9A\u0BCC");
+t = t.replace(/sai/g, "\u0B9A\u0BC8");
+t = t.replace(/see/g, "\u0B9A\u0BC7");
+t = t.replace(/soo/g, "\u0B9A\u0BCB");
+t = t.replace(/saa/g, "\u0B9A\u0BBE");
+t = t.replace(/suu/g, "\u0B9A\u0BC2");
+t = t.replace(/sii/g, "\u0B9A\u0BC0");
+t = t.replace(/sa/g, "\u0B9A");
+t = t.replace(/si/g, "\u0B9A\u0BBF");
+t = t.replace(/sI/g, "\u0B9A\u0BC0");
+t = t.replace(/sA/g, "\u0B9A\u0BBE");
+t = t.replace(/se/g, "\u0B9A\u0BC6");
+t = t.replace(/sE/g, "\u0B9A\u0BC7");
+t = t.replace(/so/g, "\u0B9A\u0BCA");
+t = t.replace(/sO/g, "\u0B9A\u0BCB");
+t = t.replace(/su/g, "\u0B9A\u0BC1");
+t = t.replace(/sU/g, "\u0B9A\u0BC2");
+t = t.replace(/s/g, "\u0B9A\u0BCD");
+
+t = t.replace(/pau/g, "\u0BAA\u0BCC");
+t = t.replace(/pai/g, "\u0BAA\u0BC8");
+t = t.replace(/pee/g, "\u0BAA\u0BC7");
+t = t.replace(/poo/g, "\u0BAA\u0BCB");
+t = t.replace(/paa/g, "\u0BAA\u0BBE");
+t = t.replace(/puu/g, "\u0BAA\u0BC2");
+t = t.replace(/pii/g, "\u0BAA\u0BC0");
+t = t.replace(/pa/g, "\u0BAA");
+t = t.replace(/pi/g, "\u0BAA\u0BBF");
+t = t.replace(/pI/g, "\u0BAA\u0BC0");
+t = t.replace(/pA/g, "\u0BAA\u0BBE");
+t = t.replace(/pe/g, "\u0BAA\u0BC6");
+t = t.replace(/pE/g, "\u0BAA\u0BC7");
+t = t.replace(/po/g, "\u0BAA\u0BCA");
+t = t.replace(/pO/g, "\u0BAA\u0BCB");
+t = t.replace(/pu/g, "\u0BAA\u0BC1");
+t = t.replace(/pU/g, "\u0BAA\u0BC2");
+t = t.replace(/p/g, "\u0BAA\u0BCD");
+
+t = t.replace(/bau/g, "\u0BAA\u0BCC");
+t = t.replace(/bai/g, "\u0BAA\u0BC8");
+t = t.replace(/bee/g, "\u0BAA\u0BC7");
+t = t.replace(/boo/g, "\u0BAA\u0BCB");
+t = t.replace(/baa/g, "\u0BAA\u0BBE");
+t = t.replace(/buu/g, "\u0BAA\u0BC2");
+t = t.replace(/bii/g, "\u0BAA\u0BC0");
+t = t.replace(/ba/g, "\u0BAA");
+t = t.replace(/bi/g, "\u0BAA\u0BBF");
+t = t.replace(/bI/g, "\u0BAA\u0BC0");
+t = t.replace(/bA/g, "\u0BAA\u0BBE");
+t = t.replace(/be/g, "\u0BAA\u0BC6");
+t = t.replace(/bE/g, "\u0BAA\u0BC7");
+t = t.replace(/bo/g, "\u0BAA\u0BCA");
+t = t.replace(/bO/g, "\u0BAA\u0BCB");
+t = t.replace(/bu/g, "\u0BAA\u0BC1");
+t = t.replace(/bU/g, "\u0BAA\u0BC2");
+t = t.replace(/b/g, "\u0BAA\u0BCD");
+
+t = t.replace(/mau/g, "\u0BAE\u0BCC");
+t = t.replace(/mai/g, "\u0BAE\u0BC8");
+t = t.replace(/mee/g, "\u0BAE\u0BC7");
+t = t.replace(/moo/g, "\u0BAE\u0BCB");
+t = t.replace(/maa/g, "\u0BAE\u0BBE");
+t = t.replace(/muu/g, "\u0BAE\u0BC2");
+t = t.replace(/mii/g, "\u0BAE\u0BC0");
+t = t.replace(/ma/g, "\u0BAE");
+t = t.replace(/mi/g, "\u0BAE\u0BBF");
+t = t.replace(/mI/g, "\u0BAE\u0BC0");
+t = t.replace(/mA/g, "\u0BAE\u0BBE");
+t = t.replace(/me/g, "\u0BAE\u0BC6");
+t = t.replace(/mE/g, "\u0BAE\u0BC7");
+t = t.replace(/mo/g, "\u0BAE\u0BCA");
+t = t.replace(/mO/g, "\u0BAE\u0BCB");
+t = t.replace(/mu/g, "\u0BAE\u0BC1");
+t = t.replace(/mU/g, "\u0BAE\u0BC2");
+t = t.replace(/m/g, "\u0BAE\u0BCD");
+
+t = t.replace(/yau/g, "\u0BAF\u0BCC");
+t = t.replace(/yai/g, "\u0BAF\u0BC8");
+t = t.replace(/yee/g, "\u0BAF\u0BC7");
+t = t.replace(/yoo/g, "\u0BAF\u0BCB");
+t = t.replace(/yaa/g, "\u0BAF\u0BBE");
+t = t.replace(/yuu/g, "\u0BAF\u0BC2");
+t = t.replace(/yii/g, "\u0BAF\u0BC0");
+t = t.replace(/ya/g, "\u0BAF");
+t = t.replace(/yi/g, "\u0BAF\u0BBF");
+t = t.replace(/yI/g, "\u0BAF\u0BC0");
+t = t.replace(/yA/g, "\u0BAF\u0BBE");
+t = t.replace(/ye/g, "\u0BAF\u0BC6");
+t = t.replace(/yE/g, "\u0BAF\u0BC7");
+t = t.replace(/yo/g, "\u0BAF\u0BCA");
+t = t.replace(/yO/g, "\u0BAF\u0BCB");
+t = t.replace(/yu/g, "\u0BAF\u0BC1");
+t = t.replace(/yU/g, "\u0BAF\u0BC2");
+t = t.replace(/y/g, "\u0BAF\u0BCD");
+
+t = t.replace(/dau/g, "\u0B9F\u0BCC");
+t = t.replace(/dai/g, "\u0B9F\u0BC8");
+t = t.replace(/dee/g, "\u0B9F\u0BC7");
+t = t.replace(/doo/g, "\u0B9F\u0BCB");
+t = t.replace(/daa/g, "\u0B9F\u0BBE");
+t = t.replace(/duu/g, "\u0B9F\u0BC2");
+t = t.replace(/dii/g, "\u0B9F\u0BC0");
+t = t.replace(/da/g, "\u0B9F");
+t = t.replace(/di/g, "\u0B9F\u0BBF");
+t = t.replace(/dI/g, "\u0B9F\u0BC0");
+t = t.replace(/dA/g, "\u0B9F\u0BBE");
+t = t.replace(/de/g, "\u0B9F\u0BC6");
+t = t.replace(/dE/g, "\u0B9F\u0BC7");
+t = t.replace(/do/g, "\u0B9F\u0BCA");
+t = t.replace(/dO/g, "\u0B9F\u0BCB");
+t = t.replace(/du/g, "\u0B9F\u0BC1");
+t = t.replace(/dU/g, "\u0B9F\u0BC2");
+t = t.replace(/d/g, "\u0B9F\u0BCD");
+
+t = t.replace(/nau/g, "\u0BA9\u0BCC");
+t = t.replace(/nai/g, "\u0BA9\u0BC8");
+t = t.replace(/nee/g, "\u0BA9\u0BC7");
+t = t.replace(/noo/g, "\u0BA9\u0BCB");
+t = t.replace(/naa/g, "\u0BA9\u0BBE");
+t = t.replace(/nuu/g, "\u0BA9\u0BC2");
+t = t.replace(/nii/g, "\u0BA9\u0BC0");
+t = t.replace(/na/g, "\u0BA9");
+t = t.replace(/ni/g, "\u0BA9\u0BBF");
+t = t.replace(/nI/g, "\u0BA9\u0BC0");
+t = t.replace(/nA/g, "\u0BA9\u0BBE");
+t = t.replace(/ne/g, "\u0BA9\u0BC6");
+t = t.replace(/nE/g, "\u0BA9\u0BC7");
+t = t.replace(/no/g, "\u0BA9\u0BCA");
+t = t.replace(/nO/g, "\u0BA9\u0BCB");
+t = t.replace(/nu/g, "\u0BA9\u0BC1");
+t = t.replace(/nU/g, "\u0BA9\u0BC2");
+t = t.replace(/n/g, "\u0BA9\u0BCD");
+
+t = t.replace(/Nau/g, "\u0BA3\u0BCC");
+t = t.replace(/Nai/g, "\u0BA3\u0BC8");
+t = t.replace(/Nee/g, "\u0BA3\u0BC7");
+t = t.replace(/Noo/g, "\u0BA3\u0BCB");
+t = t.replace(/Naa/g, "\u0BA3\u0BBE");
+t = t.replace(/Nuu/g, "\u0BA3\u0BC2");
+t = t.replace(/Nii/g, "\u0BA3\u0BC0");
+t = t.replace(/Na/g, "\u0BA3");
+t = t.replace(/Ni/g, "\u0BA3\u0BBF");
+t = t.replace(/NI/g, "\u0BA3\u0BC0");
+t = t.replace(/NA/g, "\u0BA3\u0BBE");
+t = t.replace(/Ne/g, "\u0BA3\u0BC6");
+t = t.replace(/NE/g, "\u0BA3\u0BC7");
+t = t.replace(/No/g, "\u0BA3\u0BCA");
+t = t.replace(/NO/g, "\u0BA3\u0BCB");
+t = t.replace(/Nu/g, "\u0BA3\u0BC1");
+t = t.replace(/NU/g, "\u0BA3\u0BC2");
+t = t.replace(/N/g, "\u0BA3\u0BCD");
+
+t = t.replace(/lau/g, "\u0BB2\u0BCC");
+t = t.replace(/lai/g, "\u0BB2\u0BC8");
+t = t.replace(/lee/g, "\u0BB2\u0BC7");
+t = t.replace(/loo/g, "\u0BB2\u0BCB");
+t = t.replace(/laa/g, "\u0BB2\u0BBE");
+t = t.replace(/luu/g, "\u0BB2\u0BC2");
+t = t.replace(/lii/g, "\u0BB2\u0BC0");
+t = t.replace(/la/g, "\u0BB2");
+t = t.replace(/li/g, "\u0BB2\u0BBF");
+t = t.replace(/lI/g, "\u0BB2\u0BC0");
+t = t.replace(/lA/g, "\u0BB2\u0BBE");
+t = t.replace(/le/g, "\u0BB2\u0BC6");
+t = t.replace(/lE/g, "\u0BB2\u0BC7");
+t = t.replace(/lo/g, "\u0BB2\u0BCA");
+t = t.replace(/lO/g, "\u0BB2\u0BCB");
+t = t.replace(/lu/g, "\u0BB2\u0BC1");
+t = t.replace(/lU/g, "\u0BB2\u0BC2");
+t = t.replace(/l/g, "\u0BB2\u0BCD");
+
+t = t.replace(/Lau/g, "\u0BB3\u0BCC");
+t = t.replace(/Lai/g, "\u0BB3\u0BC8");
+t = t.replace(/Lee/g, "\u0BB3\u0BC7");
+t = t.replace(/Loo/g, "\u0BB3\u0BCB");
+t = t.replace(/Laa/g, "\u0BB3\u0BBE");
+t = t.replace(/Luu/g, "\u0BB3\u0BC2");
+t = t.replace(/Lii/g, "\u0BB3\u0BC0");
+t = t.replace(/La/g, "\u0BB3");
+t = t.replace(/Li/g, "\u0BB3\u0BBF");
+t = t.replace(/LI/g, "\u0BB3\u0BC0");
+t = t.replace(/LA/g, "\u0BB3\u0BBE");
+t = t.replace(/Le/g, "\u0BB3\u0BC6");
+t = t.replace(/LE/g, "\u0BB3\u0BC7");
+t = t.replace(/Lo/g, "\u0BB3\u0BCA");
+t = t.replace(/LO/g, "\u0BB3\u0BCB");
+t = t.replace(/Lu/g, "\u0BB3\u0BC1");
+t = t.replace(/LU/g, "\u0BB3\u0BC2");
+t = t.replace(/L/g, "\u0BB3\u0BCD");
+
+t = t.replace(/vau/g, "\u0BB5\u0BCC");
+t = t.replace(/vai/g, "\u0BB5\u0BC8");
+t = t.replace(/vee/g, "\u0BB5\u0BC7");
+t = t.replace(/voo/g, "\u0BB5\u0BCB");
+t = t.replace(/vaa/g, "\u0BB5\u0BBE");
+t = t.replace(/vuu/g, "\u0BB5\u0BC2");
+t = t.replace(/vii/g, "\u0BB5\u0BC0");
+t = t.replace(/va/g, "\u0BB5");
+t = t.replace(/vi/g, "\u0BB5\u0BBF");
+t = t.replace(/vI/g, "\u0BB5\u0BC0");
+t = t.replace(/vA/g, "\u0BB5\u0BBE");
+t = t.replace(/ve/g, "\u0BB5\u0BC6");
+t = t.replace(/vE/g, "\u0BB5\u0BC7");
+t = t.replace(/vo/g, "\u0BB5\u0BCA");
+t = t.replace(/vO/g, "\u0BB5\u0BCB");
+t = t.replace(/vu/g, "\u0BB5\u0BC1");
+t = t.replace(/vU/g, "\u0BB5\u0BC2");
+t = t.replace(/v/g, "\u0BB5\u0BCD");
+
+t = t.replace(/gau/g, "\u0B95\u0BCC");
+t = t.replace(/gai/g, "\u0B95\u0BC8");
+t = t.replace(/gee/g, "\u0B95\u0BC7");
+t = t.replace(/goo/g, "\u0B95\u0BCB");
+t = t.replace(/gaa/g, "\u0B95\u0BBE");
+t = t.replace(/guu/g, "\u0B95\u0BC2");
+t = t.replace(/gii/g, "\u0B95\u0BC0");
+t = t.replace(/ga/g, "\u0B95");
+t = t.replace(/gi/g, "\u0B95\u0BBF");
+t = t.replace(/gI/g, "\u0B95\u0BC0");
+t = t.replace(/gA/g, "\u0B95\u0BBE");
+t = t.replace(/ge/g, "\u0B95\u0BC6");
+t = t.replace(/gE/g, "\u0B95\u0BC7");
+t = t.replace(/go/g, "\u0B95\u0BCA");
+t = t.replace(/gO/g, "\u0B95\u0BCB");
+t = t.replace(/gu/g, "\u0B95\u0BC1");
+t = t.replace(/gU/g, "\u0B95\u0BC2");
+t = t.replace(/g/g, "\u0B95\u0BCD");
+
+t = t.replace(/au/g, "\u0B94");
+t = t.replace(/ai/g, "\u0B90");
+t = t.replace(/aa/g, "\u0B86");
+t = t.replace(/ee/g, "\u0B8F");
+t = t.replace(/ii/g, "\u0B88");
+t = t.replace(/uu/g, "\u0B8A");
+t = t.replace(/oo/g, "\u0B93");
+t = t.replace(/i/g, "\u0B87");
+t = t.replace(/I/g, "\u0B88");
+t = t.replace(/a/g, "\u0B85");
+t = t.replace(/A/g, "\u0B86");
+t = t.replace(/e/g, "\u0B8E");
+t = t.replace(/E/g, "\u0B8F");
+t = t.replace(/i/g, "\u0B87");
+t = t.replace(/I/g, "\u0B88");
+t = t.replace(/u/g, "\u0B89");
+t = t.replace(/U/g, "\u0B8A");
+t = t.replace(/o/g, "\u0B92");
+t = t.replace(/O/g, "\u0B93");
+t = t.replace(/x/g, "\u0BEF");
+t = t.replace(/q/g, "\u0B83");
+
+t = t.replace(/-1000/g, "\u0BF2");
+t = t.replace(/-100/g, "\u0BF1");
+t = t.replace(/-10/g, "\u0BF0");
+t = t.replace(/-1/g, "\u0BE7");
+t = t.replace(/-2/g, "\u0BE8");
+t = t.replace(/-3/g, "\u0BE9");
+t = t.replace(/-4/g, "\u0BEA");
+t = t.replace(/-5/g, "\u0BEB");
+t = t.replace(/-6/g, "\u0BEC");
+t = t.replace(/-7/g, "\u0BED");
+t = t.replace(/-8/g, "\u0BEE");
+t = t.replace(/-9/g, "\u0BEF");
+t = t.replace(/-0/g, "0");
+
+return t;
+}
+
+
+function iTT(t)
+{
+t = t.replace(new RegExp("\u0B87","g"), "i");
+t = t.replace(new RegExp("\u0B88","g"), "I");
+t = t.replace(new RegExp("\u0B85","g"), "a");
+t = t.replace(new RegExp("\u0B86","g"), "A");
+t = t.replace(new RegExp("\u0B8E","g"), "e");
+t = t.replace(new RegExp("\u0B8F","g"), "E");
+t = t.replace(new RegExp("\u0B87","g"), "i");
+t = t.replace(new RegExp("\u0B88","g"), "I");
+t = t.replace(new RegExp("\u0B89","g"), "u");
+t = t.replace(new RegExp("\u0B8A","g"), "U");
+t = t.replace(new RegExp("\u0B92","g"), "o");
+t = t.replace(new RegExp("\u0B93","g"), "O");
+t = t.replace(new RegExp("\u0BEF","g"), "x");
+t = t.replace(new RegExp("\u0B83","g"), "q");
+t = t.replace(new RegExp("\u0B94","g"), "au");
+t = t.replace(new RegExp("\u0B90","g"), "ai");
+
+t = t.replace(new RegExp("\u0BF2","g"), "-1000");
+t = t.replace(new RegExp("\u0BF1","g"), "-100");
+t = t.replace(new RegExp("\u0BF0","g"), "-10");
+t = t.replace(new RegExp("\u0BE7","g"), "-1");
+t = t.replace(new RegExp("\u0BE8","g"), "-2");
+t = t.replace(new RegExp("\u0BE9","g"), "-3");
+t = t.replace(new RegExp("\u0BEA","g"), "-4");
+t = t.replace(new RegExp("\u0BEB","g"), "-5");
+t = t.replace(new RegExp("\u0BEC","g"), "-6");
+t = t.replace(new RegExp("\u0BED","g"), "-7");
+t = t.replace(new RegExp("\u0BEE","g"), "-8");
+t = t.replace(new RegExp("\u0BEF","g"), "-9");
+
+t = t.replace(new RegExp("\u0B95\u0BCD","g"), "k");
+t = t.replace(new RegExp("\u0B95\u0BBF","g"), "ki");
+t = t.replace(new RegExp("\u0B95\u0BC0","g"), "kI");
+t = t.replace(new RegExp("\u0B95\u0BBE","g"), "kA");
+t = t.replace(new RegExp("\u0B95\u0BC6","g"), "ke");
+t = t.replace(new RegExp("\u0B95\u0BC7","g"), "kE");
+t = t.replace(new RegExp("\u0B95\u0BCA","g"), "ko");
+t = t.replace(new RegExp("\u0B95\u0BCB","g"), "kO");
+t = t.replace(new RegExp("\u0B95\u0BC1","g"), "ku");
+t = t.replace(new RegExp("\u0B95\u0BC2","g"), "kU");
+t = t.replace(new RegExp("\u0B95\u0BCC","g"), "kau");
+t = t.replace(new RegExp("\u0B95\u0BC8","g"), "kai");
+t = t.replace(new RegExp("\u0B95","g"), "ka");
+
+t = t.replace(new RegExp("\u0B99\u0BCD","g"), "ng");
+t = t.replace(new RegExp("\u0B99\u0BBF","g"), "ngi");
+t = t.replace(new RegExp("\u0B99\u0BC0","g"), "ngI");
+t = t.replace(new RegExp("\u0B99\u0BBE","g"), "ngA");
+t = t.replace(new RegExp("\u0B99\u0BC6","g"), "nge");
+t = t.replace(new RegExp("\u0B99\u0BC7","g"), "ngE");
+t = t.replace(new RegExp("\u0B99\u0BCA","g"), "ngo");
+t = t.replace(new RegExp("\u0B99\u0BCB","g"), "ngO");
+t = t.replace(new RegExp("\u0B99\u0BC1","g"), "ngu");
+t = t.replace(new RegExp("\u0B99\u0BC2","g"), "ngU");
+t = t.replace(new RegExp("\u0B99\u0BCC","g"), "ngau");
+t = t.replace(new RegExp("\u0B99\u0BC8","g"), "ngai");
+t = t.replace(new RegExp("\u0B99","g"), "nga");
+
+t = t.replace(new RegExp("\u0B9A\u0BCD","g"), "s");
+t = t.replace(new RegExp("\u0B9A\u0BBF","g"), "si");
+t = t.replace(new RegExp("\u0B9A\u0BC0","g"), "sI");
+t = t.replace(new RegExp("\u0B9A\u0BBE","g"), "sA");
+t = t.replace(new RegExp("\u0B9A\u0BC6","g"), "se");
+t = t.replace(new RegExp("\u0B9A\u0BC7","g"), "sE");
+t = t.replace(new RegExp("\u0B9A\u0BCA","g"), "so");
+t = t.replace(new RegExp("\u0B9A\u0BCB","g"), "sO");
+t = t.replace(new RegExp("\u0B9A\u0BC1","g"), "su");
+t = t.replace(new RegExp("\u0B9A\u0BC2","g"), "sU");
+t = t.replace(new RegExp("\u0B9A\u0BCC","g"), "sau");
+t = t.replace(new RegExp("\u0B9A\u0BC8","g"), "sai");
+t = t.replace(new RegExp("\u0B9A","g"), "sa");
+
+t = t.replace(new RegExp("\u0B9E\u0BCD","g"), "nj");
+t = t.replace(new RegExp("\u0B9E\u0BBF","g"), "nji");
+t = t.replace(new RegExp("\u0B9E\u0BC0","g"), "njI");
+t = t.replace(new RegExp("\u0B9E\u0BBE","g"), "njA");
+t = t.replace(new RegExp("\u0B9E\u0BC6","g"), "nje");
+t = t.replace(new RegExp("\u0B9E\u0BC7","g"), "njE");
+t = t.replace(new RegExp("\u0B9E\u0BCA","g"), "njo");
+t = t.replace(new RegExp("\u0B9E\u0BCB","g"), "njO");
+t = t.replace(new RegExp("\u0B9E\u0BC1","g"), "nju");
+t = t.replace(new RegExp("\u0B9E\u0BC2","g"), "njU");
+t = t.replace(new RegExp("\u0B9E\u0BCC","g"), "njau");
+t = t.replace(new RegExp("\u0B9E\u0BC8","g"), "njai");
+t = t.replace(new RegExp("\u0B9E","g"), "nja");
+
+t = t.replace(new RegExp("\u0B9F\u0BCD","g"), "t");
+t = t.replace(new RegExp("\u0B9F\u0BBF","g"), "ti");
+t = t.replace(new RegExp("\u0B9F\u0BC0","g"), "tI");
+t = t.replace(new RegExp("\u0B9F\u0BBE","g"), "tA");
+t = t.replace(new RegExp("\u0B9F\u0BC6","g"), "te");
+t = t.replace(new RegExp("\u0B9F\u0BC7","g"), "tE");
+t = t.replace(new RegExp("\u0B9F\u0BCA","g"), "to");
+t = t.replace(new RegExp("\u0B9F\u0BCB","g"), "tO");
+t = t.replace(new RegExp("\u0B9F\u0BC1","g"), "tu");
+t = t.replace(new RegExp("\u0B9F\u0BC2","g"), "tU");
+t = t.replace(new RegExp("\u0B9F\u0BCC","g"), "tau");
+t = t.replace(new RegExp("\u0B9F\u0BC8","g"), "tai");
+t = t.replace(new RegExp("\u0B9F","g"), "ta");
+
+t = t.replace(new RegExp("\u0BA3\u0BCD","g"), "N");
+t = t.replace(new RegExp("\u0BA3\u0BBF","g"), "Ni");
+t = t.replace(new RegExp("\u0BA3\u0BC0","g"), "NI");
+t = t.replace(new RegExp("\u0BA3\u0BBE","g"), "NA");
+t = t.replace(new RegExp("\u0BA3\u0BC6","g"), "Ne");
+t = t.replace(new RegExp("\u0BA3\u0BC7","g"), "NE");
+t = t.replace(new RegExp("\u0BA3\u0BCA","g"), "No");
+t = t.replace(new RegExp("\u0BA3\u0BCB","g"), "NO");
+t = t.replace(new RegExp("\u0BA3\u0BC1","g"), "Nu");
+t = t.replace(new RegExp("\u0BA3\u0BC2","g"), "NU");
+t = t.replace(new RegExp("\u0BA3\u0BCC","g"), "Nau");
+t = t.replace(new RegExp("\u0BA3\u0BC8","g"), "Nai");
+t = t.replace(new RegExp("\u0BA3","g"), "Na");
+
+t = t.replace(new RegExp("\u0BA4\u0BCD","g"), "th");
+t = t.replace(new RegExp("\u0BA4\u0BBF","g"), "thi");
+t = t.replace(new RegExp("\u0BA4\u0BC0","g"), "thI");
+t = t.replace(new RegExp("\u0BA4\u0BBE","g"), "thA");
+t = t.replace(new RegExp("\u0BA4\u0BC6","g"), "the");
+t = t.replace(new RegExp("\u0BA4\u0BC7","g"), "thE");
+t = t.replace(new RegExp("\u0BA4\u0BCA","g"), "tho");
+t = t.replace(new RegExp("\u0BA4\u0BCB","g"), "thO");
+t = t.replace(new RegExp("\u0BA4\u0BC1","g"), "thu");
+t = t.replace(new RegExp("\u0BA4\u0BC2","g"), "thU");
+t = t.replace(new RegExp("\u0BA4\u0BCC","g"), "thau");
+t = t.replace(new RegExp("\u0BA4\u0BC8","g"), "thai");
+t = t.replace(new RegExp("\u0BA4","g"), "tha");
+
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BCD","g"), "nth");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BBF","g"), "nthi");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC0","g"), "nthI");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BBE","g"), "nthA");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC6","g"), "nthe");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC7","g"), "nthE");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BCA","g"), "ntho");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BCB","g"), "nthO");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC1","g"), "nthu");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC2","g"), "nthU");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BCC","g"), "nthau");
+t = t.replace(new RegExp("\u0BA8\u0BA4\u0BC8","g"), "nthai");
+t = t.replace(new RegExp("\u0BA8\u0BA4","g"), "ntha");
+
+t = t.replace(new RegExp("\u0BA8\u0BCD","g"), "w");
+t = t.replace(new RegExp(" \u0BA8\u0BCD","g"), " n");
+t = t.replace(new RegExp("\u0BA8\u0BCD","g"), "n-");
+t = t.replace(new RegExp("\u0BA8\u0BCD","g"), "-n");
+t = t.replace(new RegExp("\u0BA8\u0BBF","g"), "wi");
+t = t.replace(new RegExp("\u0BA8\u0BC0","g"), "wI");
+t = t.replace(new RegExp("\u0BA8\u0BBE","g"), "wA");
+t = t.replace(new RegExp("\u0BA8\u0BC6","g"), "we");
+t = t.replace(new RegExp("\u0BA8\u0BC7","g"), "wE");
+t = t.replace(new RegExp("\u0BA8\u0BCA","g"), "wo");
+t = t.replace(new RegExp("\u0BA8\u0BCB","g"), "wO");
+t = t.replace(new RegExp("\u0BA8\u0BC1","g"), "wu");
+t = t.replace(new RegExp("\u0BA8\u0BC2","g"), "wU");
+t = t.replace(new RegExp("\u0BA8\u0BCC","g"), "wau");
+t = t.replace(new RegExp("\u0BA8\u0BC8","g"), "wai");
+t = t.replace(new RegExp("\u0BA8","g"), "wa");
+
+t = t.replace(new RegExp("\u0BAA\u0BCD","g"), "p");
+t = t.replace(new RegExp("\u0BAA\u0BBF","g"), "pi");
+t = t.replace(new RegExp("\u0BAA\u0BC0","g"), "pI");
+t = t.replace(new RegExp("\u0BAA\u0BBE","g"), "pA");
+t = t.replace(new RegExp("\u0BAA\u0BC6","g"), "pe");
+t = t.replace(new RegExp("\u0BAA\u0BC7","g"), "pE");
+t = t.replace(new RegExp("\u0BAA\u0BCA","g"), "po");
+t = t.replace(new RegExp("\u0BAA\u0BCB","g"), "pO");
+t = t.replace(new RegExp("\u0BAA\u0BC1","g"), "pu");
+t = t.replace(new RegExp("\u0BAA\u0BC2","g"), "pU");
+t = t.replace(new RegExp("\u0BAA\u0BCC","g"), "pau");
+t = t.replace(new RegExp("\u0BAA\u0BC8","g"), "pai");
+t = t.replace(new RegExp("\u0BAA","g"), "pa");
+
+t = t.replace(new RegExp("\u0BAE\u0BCD","g"), "m");
+t = t.replace(new RegExp("\u0BAE\u0BBF","g"), "mi");
+t = t.replace(new RegExp("\u0BAE\u0BC0","g"), "mI");
+t = t.replace(new RegExp("\u0BAE\u0BBE","g"), "mA");
+t = t.replace(new RegExp("\u0BAE\u0BC6","g"), "me");
+t = t.replace(new RegExp("\u0BAE\u0BC7","g"), "mE");
+t = t.replace(new RegExp("\u0BAE\u0BCA","g"), "mo");
+t = t.replace(new RegExp("\u0BAE\u0BCB","g"), "mO");
+t = t.replace(new RegExp("\u0BAE\u0BC1","g"), "mu");
+t = t.replace(new RegExp("\u0BAE\u0BC2","g"), "mU");
+t = t.replace(new RegExp("\u0BAE\u0BCC","g"), "mau");
+t = t.replace(new RegExp("\u0BAE\u0BC8","g"), "mai");
+t = t.replace(new RegExp("\u0BAE","g"), "ma");
+
+t = t.replace(new RegExp("\u0BAF\u0BCD","g"), "y");
+t = t.replace(new RegExp("\u0BAF\u0BBF","g"), "yi");
+t = t.replace(new RegExp("\u0BAF\u0BC0","g"), "yI");
+t = t.replace(new RegExp("\u0BAF\u0BBE","g"), "yA");
+t = t.replace(new RegExp("\u0BAF\u0BC6","g"), "ye");
+t = t.replace(new RegExp("\u0BAF\u0BC7","g"), "yE");
+t = t.replace(new RegExp("\u0BAF\u0BCA","g"), "yo");
+t = t.replace(new RegExp("\u0BAF\u0BCB","g"), "yO");
+t = t.replace(new RegExp("\u0BAF\u0BC1","g"), "yu");
+t = t.replace(new RegExp("\u0BAF\u0BC2","g"), "yU");
+t = t.replace(new RegExp("\u0BAF\u0BCC","g"), "yau");
+t = t.replace(new RegExp("\u0BAF\u0BC8","g"), "yai");
+t = t.replace(new RegExp("\u0BAF","g"), "ya");
+
+t = t.replace(new RegExp("\u0BB0\u0BCD","g"), "r");
+t = t.replace(new RegExp("\u0BB0\u0BBF","g"), "ri");
+t = t.replace(new RegExp("\u0BB0\u0BC0","g"), "rI");
+t = t.replace(new RegExp("\u0BB0\u0BBE","g"), "rA");
+t = t.replace(new RegExp("\u0BB0\u0BC6","g"), "re");
+t = t.replace(new RegExp("\u0BB0\u0BC7","g"), "rE");
+t = t.replace(new RegExp("\u0BB0\u0BCA","g"), "ro");
+t = t.replace(new RegExp("\u0BB0\u0BCB","g"), "rO");
+t = t.replace(new RegExp("\u0BB0\u0BC1","g"), "ru");
+t = t.replace(new RegExp("\u0BB0\u0BC2","g"), "rU");
+t = t.replace(new RegExp("\u0BB0\u0BCC","g"), "rau");
+t = t.replace(new RegExp("\u0BB0\u0BC8","g"), "rai");
+t = t.replace(new RegExp("\u0BB0","g"), "ra");
+
+t = t.replace(new RegExp("\u0BB2\u0BCD","g"), "l");
+t = t.replace(new RegExp("\u0BB2\u0BBF","g"), "li");
+t = t.replace(new RegExp("\u0BB2\u0BC0","g"), "lI");
+t = t.replace(new RegExp("\u0BB2\u0BBE","g"), "lA");
+t = t.replace(new RegExp("\u0BB2\u0BC6","g"), "le");
+t = t.replace(new RegExp("\u0BB2\u0BC7","g"), "lE");
+t = t.replace(new RegExp("\u0BB2\u0BCA","g"), "lo");
+t = t.replace(new RegExp("\u0BB2\u0BCB","g"), "lO");
+t = t.replace(new RegExp("\u0BB2\u0BC1","g"), "lu");
+t = t.replace(new RegExp("\u0BB2\u0BC2","g"), "lU");
+t = t.replace(new RegExp("\u0BB2\u0BCC","g"), "lau");
+t = t.replace(new RegExp("\u0BB2\u0BC8","g"), "lai");
+t = t.replace(new RegExp("\u0BB2","g"), "la");
+
+t = t.replace(new RegExp("\u0BB5\u0BCD","g"), "v");
+t = t.replace(new RegExp("\u0BB5\u0BBF","g"), "vi");
+t = t.replace(new RegExp("\u0BB5\u0BC0","g"), "vI");
+t = t.replace(new RegExp("\u0BB5\u0BBE","g"), "vA");
+t = t.replace(new RegExp("\u0BB5\u0BC6","g"), "ve");
+t = t.replace(new RegExp("\u0BB5\u0BC7","g"), "vE");
+t = t.replace(new RegExp("\u0BB5\u0BCA","g"), "vo");
+t = t.replace(new RegExp("\u0BB5\u0BCB","g"), "vO");
+t = t.replace(new RegExp("\u0BB5\u0BC1","g"), "vu");
+t = t.replace(new RegExp("\u0BB5\u0BC2","g"), "vU");
+t = t.replace(new RegExp("\u0BB5\u0BCC","g"), "vau");
+t = t.replace(new RegExp("\u0BB5\u0BC8","g"), "vai");
+t = t.replace(new RegExp("\u0BB5","g"), "va");
+
+t = t.replace(new RegExp("\u0BB4\u0BCD","g"), "z");
+t = t.replace(new RegExp("\u0BB4\u0BCD","g"), "zh");
+t = t.replace(new RegExp("\u0BB4\u0BBF","g"), "zi");
+t = t.replace(new RegExp("\u0BB4\u0BC0","g"), "zI");
+t = t.replace(new RegExp("\u0BB4\u0BBE","g"), "zA");
+t = t.replace(new RegExp("\u0BB4\u0BC6","g"), "ze");
+t = t.replace(new RegExp("\u0BB4\u0BC7","g"), "zE");
+t = t.replace(new RegExp("\u0BB4\u0BCA","g"), "zo");
+t = t.replace(new RegExp("\u0BB4\u0BCB","g"), "zO");
+t = t.replace(new RegExp("\u0BB4\u0BC1","g"), "zu");
+t = t.replace(new RegExp("\u0BB4\u0BC2","g"), "zU");
+t = t.replace(new RegExp("\u0BB4\u0BCC","g"), "zau");
+t = t.replace(new RegExp("\u0BB4\u0BC8","g"), "zai");
+t = t.replace(new RegExp("\u0BB4","g"), "za");
+
+t = t.replace(new RegExp("\u0BB3\u0BCD","g"), "L");
+t = t.replace(new RegExp("\u0BB3\u0BBF","g"), "Li");
+t = t.replace(new RegExp("\u0BB3\u0BC0","g"), "LI");
+t = t.replace(new RegExp("\u0BB3\u0BBE","g"), "LA");
+t = t.replace(new RegExp("\u0BB3\u0BC6","g"), "Le");
+t = t.replace(new RegExp("\u0BB3\u0BC7","g"), "LE");
+t = t.replace(new RegExp("\u0BB3\u0BCA","g"), "Lo");
+t = t.replace(new RegExp("\u0BB3\u0BCB","g"), "LO");
+t = t.replace(new RegExp("\u0BB3\u0BC1","g"), "Lu");
+t = t.replace(new RegExp("\u0BB3\u0BC2","g"), "LU");
+t = t.replace(new RegExp("\u0BB3\u0BCC","g"), "Lau");
+t = t.replace(new RegExp("\u0BB3\u0BC8","g"), "Lai");
+t = t.replace(new RegExp("\u0BB3","g"), "La");
+
+t = t.replace(new RegExp("\u0BB1\u0BCD","g"), "R");
+t = t.replace(new RegExp("\u0BB1\u0BBF","g"), "Ri");
+t = t.replace(new RegExp("\u0BB1\u0BC0","g"), "RI");
+t = t.replace(new RegExp("\u0BB1\u0BBE","g"), "RA");
+t = t.replace(new RegExp("\u0BB1\u0BC6","g"), "Re");
+t = t.replace(new RegExp("\u0BB1\u0BC7","g"), "RE");
+t = t.replace(new RegExp("\u0BB1\u0BCA","g"), "Ro");
+t = t.replace(new RegExp("\u0BB1\u0BCB","g"), "RO");
+t = t.replace(new RegExp("\u0BB1\u0BC1","g"), "Ru");
+t = t.replace(new RegExp("\u0BB1\u0BC2","g"), "RU");
+t = t.replace(new RegExp("\u0BB1\u0BCC","g"), "Rau");
+t = t.replace(new RegExp("\u0BB1\u0BC8","g"), "Rai");
+t = t.replace(new RegExp("\u0BB1","g"), "Ra");
+
+t = t.replace(new RegExp("\u0BA9\u0BCD","g"), "n");
+t = t.replace(new RegExp("\u0BA9\u0BBF","g"), "ni");
+t = t.replace(new RegExp("\u0BA9\u0BC0","g"), "nI");
+t = t.replace(new RegExp("\u0BA9\u0BBE","g"), "nA");
+t = t.replace(new RegExp("\u0BA9\u0BC6","g"), "ne");
+t = t.replace(new RegExp("\u0BA9\u0BC7","g"), "nE");
+t = t.replace(new RegExp("\u0BA9\u0BCA","g"), "no");
+t = t.replace(new RegExp("\u0BA9\u0BCB","g"), "nO");
+t = t.replace(new RegExp("\u0BA9\u0BC1","g"), "nu");
+t = t.replace(new RegExp("\u0BA9\u0BC2","g"), "nU");
+t = t.replace(new RegExp("\u0BA9\u0BCC","g"), "nau");
+t = t.replace(new RegExp("\u0BA9\u0BC8","g"), "nai");
+t = t.replace(new RegExp("\u0BA9","g"), "na");
+
+t = t.replace(new RegExp("\u0BB8\u0BCD","g"), "S");
+t = t.replace(new RegExp("\u0BB8\u0BBF","g"), "Si");
+t = t.replace(new RegExp("\u0BB8\u0BC0","g"), "SI");
+t = t.replace(new RegExp("\u0BB8\u0BBE","g"), "SA");
+t = t.replace(new RegExp("\u0BB8\u0BC6","g"), "Se");
+t = t.replace(new RegExp("\u0BB8\u0BC7","g"), "SE");
+t = t.replace(new RegExp("\u0BB8\u0BCA","g"), "So");
+t = t.replace(new RegExp("\u0BB8\u0BCB","g"), "SO");
+t = t.replace(new RegExp("\u0BB8\u0BC1","g"), "Su");
+t = t.replace(new RegExp("\u0BB8\u0BC2","g"), "SU");
+t = t.replace(new RegExp("\u0BB8\u0BCC","g"), "Sau");
+t = t.replace(new RegExp("\u0BB8\u0BC8","g"), "Sai");
+t = t.replace(new RegExp("\u0BB8","g"), "Sa");
+
+t = t.replace(new RegExp("\u0BB7\u0BCD","g"), "sh");
+t = t.replace(new RegExp("\u0BB7\u0BBF","g"), "shi");
+t = t.replace(new RegExp("\u0BB7\u0BC0","g"), "shI");
+t = t.replace(new RegExp("\u0BB7\u0BBE","g"), "shA");
+t = t.replace(new RegExp("\u0BB7\u0BC6","g"), "she");
+t = t.replace(new RegExp("\u0BB7\u0BC7","g"), "shE");
+t = t.replace(new RegExp("\u0BB7\u0BCA","g"), "sho");
+t = t.replace(new RegExp("\u0BB7\u0BCB","g"), "shO");
+t = t.replace(new RegExp("\u0BB7\u0BC1","g"), "shu");
+t = t.replace(new RegExp("\u0BB7\u0BC2","g"), "shU");
+t = t.replace(new RegExp("\u0BB7\u0BCC","g"), "shau");
+t = t.replace(new RegExp("\u0BB7\u0BC8","g"), "shai");
+t = t.replace(new RegExp("\u0BB7","g"), "sha");
+
+t = t.replace(new RegExp("\u0BB9\u0BCD","g"), "-h");
+t = t.replace(new RegExp("\u0BB9\u0BBF","g"), "-hi");
+t = t.replace(new RegExp("\u0BB9\u0BC0","g"), "-hI");
+t = t.replace(new RegExp("\u0BB9\u0BBE","g"), "-hA");
+t = t.replace(new RegExp("\u0BB9\u0BC6","g"), "-he");
+t = t.replace(new RegExp("\u0BB9\u0BC7","g"), "-hE");
+t = t.replace(new RegExp("\u0BB9\u0BCA","g"), "-ho");
+t = t.replace(new RegExp("\u0BB9\u0BCB","g"), "-hO");
+t = t.replace(new RegExp("\u0BB9\u0BC1","g"), "-hu");
+t = t.replace(new RegExp("\u0BB9\u0BC2","g"), "-hU");
+t = t.replace(new RegExp("\u0BB9\u0BCC","g"), "-hau");
+t = t.replace(new RegExp("\u0BB9\u0BC8","g"), "-hai");
+t = t.replace(new RegExp("\u0BB9","g"), "-ha");
+
+t = t.replace(new RegExp("\u0B9C\u0BCD","g"), "j");
+t = t.replace(new RegExp("\u0B9C\u0BBF","g"), "ji");
+t = t.replace(new RegExp("\u0B9C\u0BC0","g"), "jI");
+t = t.replace(new RegExp("\u0B9C\u0BBE","g"), "jA");
+t = t.replace(new RegExp("\u0B9C\u0BC6","g"), "je");
+t = t.replace(new RegExp("\u0B9C\u0BC7","g"), "jE");
+t = t.replace(new RegExp("\u0B9C\u0BCA","g"), "jo");
+t = t.replace(new RegExp("\u0B9C\u0BCB","g"), "jO");
+t = t.replace(new RegExp("\u0B9C\u0BC1","g"), "ju");
+t = t.replace(new RegExp("\u0B9C\u0BC2","g"), "jU");
+t = t.replace(new RegExp("\u0B9C\u0BCC","g"), "jau");
+t = t.replace(new RegExp("\u0B9C\u0BC8","g"), "jai");
+t = t.replace(new RegExp("\u0B9C","g"), "ja");
+
+return t;
+}
+
+
+
+var isIE = document.all?true:false;
+
+function cTS(e)
+{
+  m = document.post.comment;
+
+        if(document.post.viewroman.checked)
+                return true;
+
+        if( isIE )
+        {
+          if (e.keyCode == 0 || e.keyCode == 1  )
+                return true;
+          m.caretPos = document.selection.createRange().duplicate();
+          txtPos = m.caretPos;
+          if (e.keyCode == 123 )
+             m.caretPos.text = "\u001F";
+
+        }
+        else if( m.selectionStart)
+        {
+         txtPos = m.selectionStart;
+          if (e.which == 0 || e.which == 1)
+              return true;
+         if (e.which == 123 )
+         {
+                var startPos = m.selectionStart;
+                var endPos = m.selectionEnd;
+                m.value = m.value.substring(0, startPos) + "\u001F"  + m.value.substring(endPos, m.value.length);
+         }
+        }
+        document.post.box1.value=iTT(document.post.comment.value);
+        document.post.comment.value=cTT(document.post.box1.value);
+}
+
+function tgC()
+{
+ if(document.post.viewroman.checked)
+        document.post.comment.value=iTT(document.post.comment.value);
+ else
+        document.post.comment.value=cTT(document.post.comment.value);
+}
+
+//-->
+</script>
+<style type="text/css">
+<!--
+/* $WEFT -- Created by: A.Umar (csd_one@yahoo.com) on 08-Sep-2003 -- */
+                        @font-face {
+                        font-family: TheneeUniTx;
+                        font-style: normal;
+                        font-weight: normal;
+                        src: url(http://kasi.thamizmanam.com/media/THENEE.eot);
+                        }
+-->
+</style>
+<style>
+  body {
+    background: #333;
+  }
+
+  .tamil-typer {
+    width: 573px;
+    margin: 40px auto;
+  }
+
+  .tamil-typer .field {
+    background: linear-gradient(#fa7f2d, #ff6600, #fa7f2d);
+    padding: 5px;
+    box-shadow: inset 0 1px #fab587, 0 3px 3px #222;
+    border-radius: 3px;
+    margin-bottom: 9px;
+  }
+
+  .tamil-typer .field textarea {
+    border: 1px solid #96450f;
+    display: block;
+    width: 277px;
+    padding: 5px;
+    font-size: 19px;
+    font-family: Helvetica Neue;
+    font-weight: 600;
+    box-shadow: 0 1px #fcb483, inset 0 3px 5px #aaa;
+    border-radius: 3px;
+    color: #666564;
+  }
+
+  .tamil-typer .field input:focus {
+    outline: none;
+    color: #333;
+  }
+
+  .tamil-typer .field.with-btn {
+    width: 200px;
+    float: left;
+  }
+
+  .tamil-typer .field.with-btn input {
+    width: 188px;
+  }
+
+  .tamil-typer button {
+    border: none;
+    display: block;
+    width: 81px;
+    height: 46px;
+    margin-left: 9px;
+    float: left;
+    border-radius: 3px;
+    background: linear-gradient(#70787e, #4b545b);
+    text-transform: uppercase;
+    font-family: Helvetica, Neue;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #11161a;
+    text-shadow: 0 1px 0 #727980;
+    box-shadow: 0 3px 3px #222, inset 0 1px 0 #a8a8a8;
+  }
+
+  .message {
+    clear: both;
+    font-family: Helvetica Neue;
+    color: #bbb;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .mesg-title {
+    clear: both;
+    font-family: Helvetica Neue;
+    color: #bbb;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .message a {
+    color: #bbb;
+    text-decoration: none;
+    border-bottom: 1px dotted #bbb;
+  }
+
+  .message a:hover {
+    color: #ddd;
+    border-bottom-color: #ddd;
+  }
+
+  textarea {
+  resize: vertical; /* user can resize vertically, but width is fixed */
+}
+</style>
+</head>
+
+<body leftmargin="0" topmargin="0">
+<div align="center">
+<center>
+
+<form name="post" method="post">
+  <a class="mesg-title">Type in Tanglish(tamil words in english)</a>
+  <div class="tamil-typer">
+  <div class="field">
+   <textarea name="comment" charset="utf-8" onkeyup="javascript:cTS(event)" style="font-size: 12pt; height: 350px; width: 550px;" lang="ta"></textarea>
+ </div>
+ <p class="message"> <input name="viewroman" onchange="tgC()" onclick="tgC()" type="checkbox"> View in English (adjusted)</p>
+ <input name="box1" type="hidden">
+ <p class="message">
+    created by  <a href="http://github.com/ggovindan">Guru Govindan</a>
+ </p>
+</div>
+</form>
+
+</center>
+</div>
+
+</font></body></html>
