@@ -1190,7 +1190,8 @@ function tgC()
   }
 
   .tamil-typer {
-    width: 573px;
+    width: 100%;
+    height:100%;
     margin: 40px auto;
   }
 
@@ -1202,10 +1203,10 @@ function tgC()
     margin-bottom: 9px;
   }
 
-  .tamil-typer .field textarea {
+  /*.tamil-typer .field textarea {
     border: 1px solid #96450f;
     display: block;
-    width: 277px;
+    width: 800px;
     padding: 5px;
     font-size: 19px;
     font-family: Helvetica Neue;
@@ -1213,40 +1214,13 @@ function tgC()
     box-shadow: 0 1px #fcb483, inset 0 3px 5px #aaa;
     border-radius: 3px;
     color: #666564;
-  }
+  }*/
 
   .tamil-typer .field input:focus {
     outline: none;
     color: #333;
   }
 
-  .tamil-typer .field.with-btn {
-    width: 200px;
-    float: left;
-  }
-
-  .tamil-typer .field.with-btn input {
-    width: 188px;
-  }
-
-  .tamil-typer button {
-    border: none;
-    display: block;
-    width: 81px;
-    height: 46px;
-    margin-left: 9px;
-    float: left;
-    border-radius: 3px;
-    background: linear-gradient(#70787e, #4b545b);
-    text-transform: uppercase;
-    font-family: Helvetica, Neue;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #11161a;
-    text-shadow: 0 1px 0 #727980;
-    box-shadow: 0 3px 3px #222, inset 0 1px 0 #a8a8a8;
-  }
 
   .message {
     clear: both;
@@ -1281,7 +1255,7 @@ function tgC()
   textarea {
   resize: vertical; /* user can resize vertically, but width is fixed */
   width: 100%;
-  height: 300px;
+  height: 70%;
 }
 </style>
 </head>
@@ -1294,7 +1268,7 @@ function tgC()
   <a class="mesg-title">Type in Tanglish(tamil words in english)</a>
   <div class="tamil-typer">
   <div class="field">
-   <textarea name="comment" charset="utf-8" onkeyup="javascript:cTS(event)" style="font-size: 12pt; height: 350px; width: 550px;" lang="ta">தமிழில் எழுது !!</textarea>
+   <textarea name="comment" charset="utf-8" onkeyup="javascript:cTS(event)" style="font-size: 17pt;" font-weight="bold" lang="ta">தமிழில் எழுது !!</textarea>
  </div>
  <p class="message"> <input name="viewroman" onchange="tgC()" onclick="tgC()" type="checkbox"> View in English (adjusted)</p>
  <input name="box1" type="hidden">
